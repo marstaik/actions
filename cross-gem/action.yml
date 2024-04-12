@@ -82,6 +82,7 @@ runs:
         INPUT_POST_SCRIPT: "${{ inputs.post-script }}"
       run: |
         : Compile gem
+        echo "Working Dir: $(pwd)"
         set -x
 
         args=()
