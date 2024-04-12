@@ -88,7 +88,7 @@ runs:
         args+=("--platform")
         args+=("$INPUT_PLATFORM")
         args+=("--directory")
-        args+=(${{ inputs.working-directory }})
+        args+=("${{ inputs.working-directory }}")
 
         if [ "$INPUT_RUBY_VERSIONS" != "default" ]; then
           args+=("--ruby-versions")
