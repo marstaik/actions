@@ -74,7 +74,6 @@ runs:
 
     - name: Build gem
       shell: bash
-      working-directory: ${{ inputs.working-directory }}
       env:
         INPUT_RUBY_VERSIONS: "${{ inputs.ruby-versions }}"
         INPUT_TAG: "${{ inputs.tag }}"
@@ -88,6 +87,8 @@ runs:
         args=()
         args+=("--platform")
         args+=("$INPUT_PLATFORM")
+        args+=("--directory")
+        args+=(${{ inputs.working-directory })
 
         if [ "$INPUT_RUBY_VERSIONS" != "default" ]; then
           args+=("--ruby-versions")
